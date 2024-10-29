@@ -6,6 +6,6 @@ COPY main.py /app
 
 RUN pip install --no-cache-dir fastapi uvicorn
 
-EXPOSE 8083
+EXPOSE 8080
 
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8083"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
