@@ -6,7 +6,7 @@ replicaCount: 1
 image:
   repository: darshasawa7899/fastapi-github-actions 
   # This sets the pull policy for images.
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"
 
@@ -17,7 +17,7 @@ service:
   # This sets the ports more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/#field-spec-ports
   port: 8081
   targetPort: 8081
-  nodePort: 8085
+  nodePort: 30500
 
 livenessProbe:
   httpGet:
