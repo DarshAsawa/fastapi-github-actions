@@ -30,7 +30,7 @@ jobs:
     - name: Run tests
       run: |
         pip install pytest
-        pytest
+        pytest test.py
 
     - name: Extract short SHA
       id: vars
