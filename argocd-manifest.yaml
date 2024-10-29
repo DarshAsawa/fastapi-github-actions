@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: fastapi-github-actions
+  namespace: argocd  # Adjust if Argo CD is installed in a different namespace
+spec:
+  project: default
+
+  source:
+    repoURL: 'https://github.com/DarshAsawa/fastapi-github-actions.git'
+    targetRevision: master  # Specify the branch, tag, or commit SHA
+    path: fastapi # The specific path to the Helm chart in your repo
+
+  destination:
+    server: 'https://kubernetes.default.svc'  # Your in-cluster Kubernetes API endpoint
+    namespace: web  # The namespace to deploy your application
+
+  syncPolicy:
+    automated:
+      prune: true  # Automatically remove resources not defined in Git
+      selfHeal: true  # Automatically sync changes detected in Git
