@@ -1,3 +1,8 @@
+"""
+This module contains a FastAPI application that provides basic arithmetic operations
+through API endpoints. The supported operations are addition, subtraction, multiplication,
+and division.
+"""
 from fastapi import FastAPI
 from pydantic import BaseModel
 
@@ -32,3 +37,4 @@ def divide(operation: Operation):
     if operation.b == 0:
         return {"error": "Division by zero is not allowed"}
     return {"result": operation.a / operation.b}
+    
