@@ -3,6 +3,7 @@ This module contains a FastAPI application that provides basic arithmetic operat
 through API endpoints. The supported operations are addition, subtraction, multiplication,
 and division.
 """
+from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 from fastapi import FastAPI
 
@@ -12,6 +13,11 @@ class Operation(BaseModel):
     """Model representing an arithmetic operation with two operands."""
     a: float
     b: float
+
+@app.get("/healthz")
+async def health_check():
+    # You can add logic here to check the health of dependent services if necessary
+    return JSONResponse(content={"status": "Healthy"}, status_code=200)
 
 @app.post("/add")
 def add(operation: Operation):

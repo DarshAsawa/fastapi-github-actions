@@ -18,3 +18,24 @@ service:
   port: 8080
   targetPort: 8080
   nodePort: 8083
+
+livenessProbe:
+  initialDelaySeconds: 120
+  periodSeconds: 30
+  successThreshold: 1
+  failureThreshold: 5
+  timeoutSeconds: 5
+  httpGet:
+    path: /healthz
+    port: 8080
+
+readinessProbe:
+  initialDelaySeconds: 120
+  periodSeconds: 30
+  successThreshold: 1
+  failureThreshold: 10
+  timeoutSeconds: 5
+  httpGet:
+    path: /healthz
+    port: 8080
+

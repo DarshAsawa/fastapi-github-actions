@@ -47,5 +47,7 @@ jobs:
       with:
         context: .
         push: true
-        tags: darshasawa7899/fastapi-github-actions:${{ env.GIT_SHORT_SHA }}
+        tags: |
+          darshasawa7899/fastapi-github-actions:latest
+          darshasawa7899/fastapi-github-actions:${{ env.GIT_SHORT_SHA }}
    
