@@ -3,8 +3,8 @@ This module contains a FastAPI application that provides basic arithmetic operat
 through API endpoints. The supported operations are addition, subtraction, multiplication,
 and division.
 """
-from fastapi import FastAPI
 from pydantic import BaseModel
+from fastapi import FastAPI
 
 app = FastAPI()
 
