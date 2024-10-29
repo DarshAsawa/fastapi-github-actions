@@ -1,4 +1,4 @@
-# My Python Application
+# FASTAPI
 
 This project is a fastapi application built using Python. It includes instructions for running and testing the application locally and deploying it on a Kubernetes cluster on your local machine.
 
