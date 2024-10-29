@@ -3,10 +3,9 @@ This module contains a FastAPI application that provides basic arithmetic operat
 through API endpoints. The supported operations are addition, subtraction, multiplication,
 and division.
 """
-from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 from fastapi import FastAPI
-
+from fastapi.responses import JSONResponse
 app = FastAPI()
 
 class Operation(BaseModel):
@@ -15,8 +14,8 @@ class Operation(BaseModel):
     b: float
 
 @app.get("/healthz")
-async def health_check():
-    # You can add logic here to check the health of dependent services if necessary
+def health_check():
+    """Health check endpoint for the application."""
     return JSONResponse(content={"status": "Healthy"}, status_code=200)
 
 @app.post("/add")
